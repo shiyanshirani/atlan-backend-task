@@ -1,5 +1,6 @@
 import argparse, csv, pathlib
-from package import slangs
+from package import slangs, monthlySavings
+
 
 # cli args
 parser = argparse.ArgumentParser(description="Command line interface to interact with atlan's data")
@@ -12,14 +13,14 @@ source = args.source
 plugin = args.plugin
 output = args.output
 
-def openFile(path):
+def openFile(path, plugin, output):
     with open(path) as file:
         if plugin == "slangs":
-            slangs(file)
+            slangs.slangsFunc(file, output)
         elif plugin == "monthy_savings":
-            monthlySavings(file)
+            monthlySavings(file, output)
         
 
 
 if __name__ == "__main__":
-    openFile()
+    openFile(source, plugin, output)
