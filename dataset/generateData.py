@@ -81,7 +81,7 @@ def sendSMSData(filename):
 
 if __name__ == '__main__':
     print("Which data do you want to produce:")
-    var = int(input("1: slangs 2: monthly_savings 3: csv_to_sheets-> "))
+    var = int(input("1: slangs 2: monthly_savings 3: csv_to_sheets  4: send_sms   -> "))
     start = time() # Time start
     if var == 1:
         create_slangs("slangs")

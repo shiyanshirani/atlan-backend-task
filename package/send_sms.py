@@ -4,13 +4,15 @@ from twilio.rest import Client
 
 load_dotenv()
 
-account_sid = os.getenv('TWILIO_ACCOUNT_SID')
-auth_token = os.getenv('TWILIO_AUTH_TOKEN') 
-
-client = Client(account_sid, auth_token)
 
 # Outbound SMS
 def sendNotification():
+    print('sending notifcations')
+    account_sid = os.getenv('TWILIO_ACCOUNT_SID')
+    auth_token = os.getenv('TWILIO_AUTH_TOKEN') 
+
+    client = Client(account_sid, auth_token)
+    
     with open('/Users/shiyan/Desktop/project/atlan/dataset/send_sms_data.csv', 'r') as file:
         reader = csv.reader(file)
         for row in reader:
@@ -22,4 +24,5 @@ def sendNotification():
                 )
             except Exception as e:
                 print(e)
+                
     print('Notifications sent')
