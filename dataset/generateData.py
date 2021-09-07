@@ -25,6 +25,25 @@ def create_slangs(filename):
                 }
             )
 
+def createCSVSampleData(filename):
+    with open(filename+".csv", 'w', newline="") as file:
+        fieldnames = ['name', 'phone', 'dob', 'email', 'city', 'address']
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+
+        writer.writeheader()
+
+        for i in range(RECORD_COUNT):
+            writer.writerow(
+                {
+                    "name": fake.name(),
+                    "phone": fake.phone_number(),
+                    "dob": fake.date_of_birth(),
+                    "email": fake.email(),
+                    "city": fake.city(),
+                    "address": fake.address()
+                }
+            )
+
 def create_monthlySavings(filename):
     with open(filename+".csv", 'w', newline="") as file:
         fieldnames = ['name', 'age', 'phone', 'email', 'address', 'monthly_savings']
@@ -46,12 +65,15 @@ def create_monthlySavings(filename):
 
 if __name__ == '__main__':
     print("Which data do you want to produce:")
-    var = int(input("1: slangs 2: monthly_savings   -> "))
+    var = int(input("1: slangs 2: monthly_savings 3: csv_to_sheets-> "))
     start = time() # Time start
     if var == 1:
         create_slangs("slangs")
     elif var == 2:
         create_monthlySavings("monthly_savings")
+    elif var == 3:
+        createCSVSampleData('csv_to_sheets')
+        
     total_time = time() - start # Time stop
     total_time = str(total_time)[:7]
     print(f"csv_file created in {total_time}s")
