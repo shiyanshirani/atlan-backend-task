@@ -1,5 +1,5 @@
 import argparse, csv, pathlib
-from package import slangs, monthlySavings
+from package import slangs, monthlySavings, csv_to_sheets ,send_sms
 
 
 # cli args
@@ -19,7 +19,10 @@ def openFile(path, plugin, output):
             slangs.slangsFunc(file, output)
         elif plugin == "monthy_savings":
             monthlySavings(file, output)
-        
+        elif plugin == 'csv-to-sheets':
+            csv_to_sheets.conversion()
+        elif plugin == 'send_sms':
+            send_sms.sendNotification()
 
 
 if __name__ == "__main__":

@@ -11,6 +11,8 @@ client = gspread.authorize(credentials)
 
 spreadsheet = client.open('csv-to-sheets')
 
-with open('/Users/shiyan/Desktop/project/atlan/dataset/csv_to_sheets.csv', 'r') as file:
-    content = file.read()
-    client.import_csv(spreadsheet.id, data=content)
+def conversion():
+    with open('/Users/shiyan/Desktop/project/atlan/dataset/csv_to_sheets.csv', 'r') as file:
+        content = file.read()
+        client.import_csv(spreadsheet.id, data=content)
+    print("Conversion successful")
