@@ -2,7 +2,7 @@ import csv
 
 def slangsFunc(filepath, output):
     with open(f'{filepath}') as file:
-        with open(f'output/{output}.csv', 'a', newline='') as newfile:
+        with open(f'output/{output}', 'a', newline='') as newfile:
             fieldnames = ['name', 'phone', 'email', 'city', 'slang']
             writer = csv.DictWriter(newfile, fieldnames=fieldnames)
             writer.writeheader()

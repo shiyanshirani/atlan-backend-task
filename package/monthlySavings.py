@@ -3,7 +3,7 @@ MONTHLY_INCOME = 200000
 
 def calculate(filepath, output):
     with open(f'{filepath}') as file:
-        with open(f'output/{output}.csv', 'a') as newfile:
+        with open(f'output/{output}', 'a') as newfile:
             fieldnames = ['name', 'age', 'phone', 'email', 'address', 'monthly_savings']
             writer = csv.DictWriter(newfile, fieldnames=fieldnames)
             writer.writeheader()
