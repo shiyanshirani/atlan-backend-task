@@ -20,9 +20,9 @@ def openFile(filepath, plugin, output):
     elif plugin == "monthly_savings":
         monthlySavings.calculate(filepath, output)
     elif plugin == 'csv-to-sheets':
-        csv_to_sheets.conversion()
+        csv_to_sheets.conversion(filepath)
     elif plugin == 'send_sms':
-        send_sms.sendNotification()
+        send_sms.sendNotification(filepath)
 
 
 if __name__ == "__main__":

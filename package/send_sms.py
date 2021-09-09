@@ -6,14 +6,14 @@ load_dotenv()
 
 
 # Outbound SMS
-def sendNotification():
+def sendNotification(filepath):
     print('sending notifcations')
     account_sid = os.getenv('TWILIO_ACCOUNT_SID')
     auth_token = os.getenv('TWILIO_AUTH_TOKEN') 
 
     client = Client(account_sid, auth_token)
     
-    with open('/Users/shiyan/Desktop/project/atlan/dataset/send_sms_data.csv', 'r') as file:
+    with open(f'{filepath}', 'r') as file:
         reader = csv.reader(file)
         for row in reader:
             try:

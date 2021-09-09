@@ -1,4 +1,4 @@
-def conversion():
+def conversion(filepath):
     import gspread
     from oauth2client.service_account import ServiceAccountCredentials
 
@@ -10,7 +10,7 @@ def conversion():
 
     spreadsheet = client.open('csv-to-sheets')
 
-    with open('/Users/shiyan/Desktop/project/atlan/dataset/csv_to_sheets.csv', 'r') as file_obj:
+    with open(f'{filepath}', 'r') as file_obj:
         content = file_obj.read()
         client.import_csv(spreadsheet.id, data=content)
         

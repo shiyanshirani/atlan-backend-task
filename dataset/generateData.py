@@ -4,7 +4,6 @@ from faker import Faker
 
 fake = Faker('en_US')
 RECORD_COUNT = 1000
-MONTHLY_INCOME = 200000
 
 # Function to create fake data and storing them in a file
 def create_slangs(filename):
