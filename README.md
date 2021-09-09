@@ -10,15 +10,15 @@ There were 4 problem statements assigned and all the those tasks very designed s
 
 ### Dataset
 
-This is a cli file which takes arguments to create dataset for various cases. `/dataset/generateData.py` creates sample dataset using `Faker` package which is create for creating testing database.
+This is a cli file which takes arguments to create dataset for various cases. `/dataset/generateData.py` creates sample dataset using `Faker` package which is designed for creating testing database.
 
 # Explaination
 
-1. Problem 1: `slangs.slangsFunc` is called in the `app.py` file and in that function we are reading a dataset and going through each row at a time and checking for slangs so that they can be stored. The function is not created with as such requirements becuse of less information provided. I have made a basic function to search for words ending with the letter `n` and storing only those in a new directory `/output/{name_given}.csv` in this case `/output/slangs_filtered.csv`.
+1. Problem 1: `slangs.slangsFunc` is called in the `app.py` file and in that function we are reading a dataset and going through each row at a time and checking for slangs so that they can be stored. The function is not created with as such requirements becuse of less information provided. I have made a basic function to search for words ending with the letter `'n'` and storing only those in a new directory `/output/{name_given}.csv` in this case `/output/slangs_filtered.csv`.
 
-2. Problem 2: An `MONTLY_INCOME=[int]` is assigned in this package which can be changed as desired in future and a loop is implemented so that employees with montly savings greater than montly income are flagged and sent back and the output is being stored in `/output/filtered_savings.csv`.
+2. Problem 2: An `MONTLY_INCOME=[int]` is assigned in this package which can be changed as desired in future and a loop is implemented so that employees with monthly savings greater than monthly income are flagged and sent back and the output is being stored in `/output/filtered_savings.csv`.
 
-3. Problem 3: This task is to convert all their wanting data onto **Google Sheets** wherein they could connect their CRM. In this case I generated a sample dataset which is converted onto **Google Sheets** using `Google Drive API` and linking the scopes provied in the _docs_. The `clientsecret.json` is the credentials to access the API and write all the data onto `Google Drive` in _sheets_.
+3. Problem 3: This task is to convert all their wanting data onto **Google Sheets** wherein they could connect their CRM. In this case I generated a sample dataset which is converted into **Google Sheets** using `GOOGLE DRIVE API` and linking the scopes provied in the _docs_. The `client_secret.json` is the credentials to access the API and write all the data onto `Google Drive` in _sheets_.
    `client_secret.json` will be changed according to production settings
 
 ```console
@@ -31,7 +31,7 @@ This is a cli file which takes arguments to create dataset for various cases. `/
 
 # Pipeline workflow
 
-![workflow](Workflow.jpeg)
+![workflow](design.jpeg)
 
 # Installation
 
