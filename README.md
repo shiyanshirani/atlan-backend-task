@@ -31,7 +31,7 @@ This is a cli file which takes arguments to create dataset for various cases. `/
 
 # Pipeline workflow
 
-![workflow](design.jpeg)
+![workflow](design.png)
 
 # Installation
 
