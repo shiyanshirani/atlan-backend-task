@@ -6,13 +6,13 @@ load_dotenv()
 
 
 # Outbound SMS
-def sendNotification(filepath):
-    print('sending notifcations')
+def send_notification(filepath, *args):
+    print('Sending notifcations')
     account_sid = os.getenv('TWILIO_ACCOUNT_SID')
     auth_token = os.getenv('TWILIO_AUTH_TOKEN') 
 
     client = Client(account_sid, auth_token)
-    
+
     with open(f'{filepath}', 'r') as file:
         reader = csv.reader(file)
         for row in reader:
@@ -24,5 +24,5 @@ def sendNotification(filepath):
                 )
             except Exception as e:
                 print(e)
-                
+ 
     print('Notifications sent to customers.')

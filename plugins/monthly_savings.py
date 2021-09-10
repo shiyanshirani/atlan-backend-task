@@ -3,13 +3,15 @@ MONTHLY_INCOME = 200000
 
 def calculate(filepath, output):
     with open(f'{filepath}') as file:
-        with open(f'output/{output}', 'a') as newfile:
+        with open(f'output/{output}.csv', 'w') as newfile:
             fieldnames = ['name', 'age', 'phone', 'email', 'address', 'monthly_savings']
             writer = csv.DictWriter(newfile, fieldnames=fieldnames)
             writer.writeheader()
             reader = csv.reader(file)
+            next(reader, None)
+
             for row in reader:
-                if row[5] > MONTHLY_INCOME: # ValueError
+                if int(row[5]) > MONTHLY_INCOME:
                     writer.writerow(
                         {
                             "name": row[0],
@@ -20,4 +22,5 @@ def calculate(filepath, output):
                             "monthly_savings": row[5],
                         }
                     )
+
     print(f'{output}.csv file generated')
