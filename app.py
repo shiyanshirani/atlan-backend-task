@@ -13,15 +13,24 @@ source = args.source
 plugin = args.plugin
 output = args.output
 
+dispatch_table = {
+    'slangs': slangs.slangs_func,
+    'monthly_savings': monthly_savings.calculate,
+    'csv_to_sheets': csv_to_sheets.conversion,
+    'send_sms': send_sms.send_notification
+}
+
+
 def openFile(filepath, plugin, output):
-    if plugin == "slangs":
-        slangs.slangs_func(filepath, output)
-    elif plugin == "monthly_savings":
-        monthly_savings.calculate(filepath, output)
-    elif plugin == 'csv-to-sheets':
-        csv_to_sheets.conversion(filepath)
-    elif plugin == 'send_sms':
-        send_sms.sendNotification(filepath)
+    # if plugin == "slangs":
+    #     slangs.slangs_func(filepath, output)
+    # elif plugin == "monthly_savings":
+    #     monthly_savings.calculate(filepath, output)
+    # elif plugin == 'csv_to_sheets':
+    #     csv_to_sheets.conversion(filepath)
+    # elif plugin == 'send_sms':
+    #     send_sms.sendNotification(filepath)
+    dispatch_table[plugin](filepath, output)
 
 
 if __name__ == "__main__":
