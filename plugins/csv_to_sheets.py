@@ -9,7 +9,8 @@ def generate_google_sheets(filepath, *args):
     ]
 
     credentials = ServiceAccountCredentials.from_json_keyfile_name(
-        "/Users/shiyan/Desktop/project/atlan/plugins/client_secret.json", scope         # Kindly use absolute path for the specific json key.
+        "/Users/shiyan/Desktop/project/atlan/plugins/client_secret.json",
+        scope,  # Kindly use absolute path for the specific json key.
     )
     client = gspread.authorize(credentials)
 
