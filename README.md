@@ -6,11 +6,11 @@ Hi everyone @ Atlan. :wave:, This is my **Backend assessment**.
 
 # Problem Statement:
 
-There were 4 problem statements assigned and all the those tasks very designed specifically. To implement **plug-n-play** behaviour I opted to make packages for each task so that they can be easily called anywhere inside the project folder because it contains an `__init__.py` file which tells _Python_ that it is a package.
+There were 4 problem statements assigned and all the those tasks were designed specifically. To implement **plug-n-play** behaviour I opted to make packages for each task so that they can be easily called anywhere inside the project folder because it contains an `__init__.py` file which tells _Python_ that it is a package.
 
 ### Dataset
 
-This is a cli file which takes arguments to create dataset for various cases. `/dataset/generateData.py` creates sample dataset using `Faker` package which is designed for creating testing database.
+The data for demo purposes has been genereated using `Faker` package in `/dataset/generate_data.py`.
 
 # Explaination
 
@@ -26,12 +26,12 @@ This is a cli file which takes arguments to create dataset for various cases. `/
     $ pip install oauth2client
 ```
 
-4. Problem 4: Sending SMS response back to customers who participated in their data drive, I used a basic loop and implemented `Twilio` in this case to send a response back to respective customer's contact number.
+4. Problem 4: Sending SMS response back to customers who participated in their data drive, I used a basic loop and used `Twilio` in this case to send a response back to respective customer's contact number.
    > _Thank you for participating in the data drive ~ Atlan_.
 
 # Pipeline workflow
 
-![workflow](design.png)
+![workflow](assets/design.png)
 
 # Installation
 
