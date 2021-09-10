@@ -4,7 +4,6 @@ from twilio.rest import Client
 
 load_dotenv()
 
-
 # Outbound SMS
 def send_notification(filepath, *args):
     print('Sending notifcations')
